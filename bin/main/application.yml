@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+
+spring:
+  profiles: local
+  #servlet:
+  #  context-path: /
+  datasource:
+    url: jdbc:mariadb://localhost:3306/template
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: template
+    password: template
+  jpa:
+    hibernate:
+      ddl-auto: none #JPA는 테이블을 자동으로 생성하는 기능을 제공하는데 none 를 사용하면 해당 기능을 끈다. create 를 사용하면 엔티티 정보를 바탕으로 테이블도 직접 생성해준다. 해보자
+    properties:
+      hibernate:
+        show-sql: true #JPA가 생성하는 SQL을 출력한다.
+  #mvc:
+  #  view:
+  #    prefix: /WEB-INF/views/
+  #    suffix: .jsp
+
+logging:
+  level:
+    #root: TRACE
+    org.springframework.web: TRACE
+    com.springboot: DEBUG
+    org.hibernate: DEBUG
+

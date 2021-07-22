@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+    mariadb:
+        image: mariadb
+        container_name: mariadb_springboot
+        restart: always
+        environment: 
+            - MYSQL_ROOT_PASSWORD=root
+        volumes:
+            - db/springboot:/var/lib/mysql
+        ports:
+            - 3306:3307
